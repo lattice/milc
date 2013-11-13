@@ -1,0 +1,1 @@
+build_input.ks_spectrum_hisq.spectrum2.1.sh

@@ -1,0 +1,4 @@
+exec hyb_bicg_clover     1 - - STARTPROP RUNNING
+exec hyb_cg_clover_for   1 - - STARTPROP RUNNING
+exec hyb_bicg_clover     2 - - STARTPROP RUNNING
+exec hyb_cg_clover_for   2 - - STARTPROP RUNNING

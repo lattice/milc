@@ -1,0 +1,444 @@
+SU3 with improved KS action
+Microcanonical simulation with refreshing
+R algorithm
+MIMD version 7.7.10-a8
+Machine = Scalar processor, with 1 nodes
+Host(0) = feynman.chpc.utah.edu
+Username = u0731948
+Options selected...
+Generic single precision
+C_GLOBAL_INLINE
+HALF_MIXED
+DBLSTORE_FN
+D_FN_GATHER13
+FEWSUMS
+KS_MULTIFF=FNMAT
+VECLENGTH=4
+type 0 for no prompts, 1 for prompts, or 2 for proofreading
+nflavors1 4
+nflavors2 4
+nx 16
+ny 4
+nz 4
+nt 4
+iseed 5682304
+LAYOUT = Hypercubes, options = with fixed node_geometry
+ON EACH NODE 16 x 4 x 4 x 4
+Mallocing 1.0 MBytes per node for lattice
+Made lattice
+Made nn gathers
+Made 3nn gathers
+Finished setup
+
+
+warms 0
+trajecs 2
+traj_between_meas 1
+beta 7
+mass1 0.1
+mass2 0.1
+u0 0.8441
+microcanonical_time_step 0.02
+steps_per_trajectory 4
+max_cg_iterations 500
+max_cg_restarts 5
+error_per_site 1e-06
+error_for_propagator 1e-07
+fresh 
+forget 
+unit gauge configuration loaded
+CHECK PLAQ: 3.000000e+00 3.000000e+00
+CHECK NERSC LINKTR: 1.000000e+00 CKSUM: 0
+Unitarity checked.  Max deviation 0.00e+00
+Time to check unitarity = 4.429817e-04
+"O(a^2): couplings(pi)=0, Naik term, No O(a^2) errors, tadpole weights"
+path coefficients: npath  path_coeff  multiplicity
+                    0      6.250000e-01     8
+                    1      -5.847914e-02     8
+                    2      -8.771871e-02     48
+                    3      3.077829e-02     192
+                    4      -7.199551e-03     384
+                    5      -1.231132e-01     48
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.567698e-02 (asqtad F) mflops = 4.138594e+03
+Symanzik 1x1 + 1x2 + 1x1x1 action
+gauge_action: total_dyn_flavors = 8
+loop coefficients: nloop rep loop_coeff  multiplicity
+                    0 0      1.000000e+00     6
+                    1 0      -7.762509e-02     12
+                    2 0      -1.031171e-02     16
+WARMUPS COMPLETED
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.172090e-02 (asqtad F) mflops = 1.107094e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.170993e-02 (asqtad F) mflops = 1.108130e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.171803e-02 (asqtad F) mflops = 1.107364e+04
+Found device 0: Tesla K20c
+Found device 1: Tesla K20c
+Using device 0: Tesla K20c
+Setting NUMA affinity for device 0 to CPU core 0
+WARNING: Environment variable QUDA_RESOURCE_PATH is not set.
+WARNING: Caching of tuned parameters will be disabled.
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.741796e-07, true = 6.741796e-07
+CONGRAD5: time = 9.800237e+00 (fn_QUDA F) masses = 1 iters = 16 mflops = 1.984422e+00
+ OK converged final_rsq= 4.5e-13 (cf 1e-12) rel = 1.7e-10 (cf 0) restarts = 0 iters= 16
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.082048e-07, true = 6.082048e-07
+CONGRAD5: time = 5.509853e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 3.529642e+03
+ OK converged final_rsq= 3.7e-13 (cf 1e-12) rel = 1.2e-10 (cf 0) restarts = 0 iters= 16
+GFTIME:   time = 3.734016e-02 (Symanzik1) mflops = 4.195913e+03
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.160908e-02 (asqtad F) mflops = 1.117757e+04
+OPTIME: time = 3.929138e-04 (asqtad3)
+FFTIME: time = 3.238641e+00 (asqtad3)
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.161194e-02 (asqtad F) mflops = 1.117482e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.158500e-02 (asqtad F) mflops = 1.120080e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.156688e-02 (asqtad F) mflops = 1.121835e+04
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.475049e-07, true = 6.475049e-07
+CONGRAD5: time = 4.685879e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.150301e+03
+ OK converged final_rsq= 4.2e-13 (cf 1e-12) rel = 1.5e-10 (cf 0) restarts = 0 iters= 16
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.402997e-07, true = 6.402997e-07
+CONGRAD5: time = 4.275084e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.549106e+03
+ OK converged final_rsq= 4.1e-13 (cf 1e-12) rel = 1.5e-10 (cf 0) restarts = 0 iters= 16
+GFTIME:   time = 3.741097e-02 (Symanzik1) mflops = 4.187972e+03
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.156902e-02 (asqtad F) mflops = 1.121627e+04
+OPTIME: time = 3.371239e-04 (asqtad3)
+FFTIME: time = 3.276610e-02 (asqtad3)
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.159811e-02 (asqtad F) mflops = 1.118814e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157093e-02 (asqtad F) mflops = 1.121442e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.161814e-02 (asqtad F) mflops = 1.116885e+04
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.265346e-07, true = 6.265346e-07
+CONGRAD5: time = 4.629850e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.200526e+03
+ OK converged final_rsq= 3.9e-13 (cf 1e-12) rel = 1.5e-10 (cf 0) restarts = 0 iters= 16
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.457121e-07, true = 6.457121e-07
+CONGRAD5: time = 4.505157e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.316788e+03
+ OK converged final_rsq= 4.2e-13 (cf 1e-12) rel = 1.6e-10 (cf 0) restarts = 0 iters= 16
+GFTIME:   time = 3.731799e-02 (Symanzik1) mflops = 4.198406e+03
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157093e-02 (asqtad F) mflops = 1.121442e+04
+OPTIME: time = 3.359318e-04 (asqtad3)
+FFTIME: time = 3.267503e-02 (asqtad3)
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157689e-02 (asqtad F) mflops = 1.120865e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.164889e-02 (asqtad F) mflops = 1.113937e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157284e-02 (asqtad F) mflops = 1.121257e+04
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.626404e-07, true = 6.626404e-07
+CONGRAD5: time = 4.452229e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.368106e+03
+ OK converged final_rsq= 4.4e-13 (cf 1e-12) rel = 1.7e-10 (cf 0) restarts = 0 iters= 16
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.187131e-07, true = 6.187131e-07
+CONGRAD5: time = 4.584074e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.242473e+03
+ OK converged final_rsq= 3.8e-13 (cf 1e-12) rel = 1.4e-10 (cf 0) restarts = 0 iters= 16
+GFTIME:   time = 3.976488e-02 (Symanzik1) mflops = 3.940062e+03
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.238203e-02 (asqtad F) mflops = 1.047981e+04
+OPTIME: time = 3.309250e-04 (asqtad3)
+FFTIME: time = 3.292298e-02 (asqtad3)
+PLAQ:	2.903319	2.901854
+P_LOOP:	2.899061e+00	-1.490064e-04
+G_LOOP:  0  0  4   	2.903498e+00	( 0 1 7 6  )
+G_LOOP:  0  1  4   	2.901166e+00	( 0 2 7 5  )
+G_LOOP:  0  2  4   	2.901285e+00	( 0 3 7 4  )
+G_LOOP:  0  3  4   	2.905294e+00	( 1 2 6 5  )
+G_LOOP:  0  4  4   	2.902386e+00	( 1 3 6 4  )
+G_LOOP:  0  5  4   	2.901891e+00	( 2 3 5 4  )
+G_LOOP:  1  0  6   	2.855205e+00	( 0 0 1 7 7 6  )
+G_LOOP:  1  1  6   	2.854883e+00	( 0 0 2 7 7 5  )
+G_LOOP:  1  2  6   	2.856246e+00	( 0 0 3 7 7 4  )
+G_LOOP:  1  3  6   	2.858641e+00	( 1 1 0 6 6 7  )
+G_LOOP:  1  4  6   	2.859621e+00	( 1 1 2 6 6 5  )
+G_LOOP:  1  5  6   	2.854863e+00	( 1 1 3 6 6 4  )
+G_LOOP:  1  6  6   	2.853330e+00	( 2 2 0 5 5 7  )
+G_LOOP:  1  7  6   	2.860687e+00	( 2 2 1 5 5 6  )
+G_LOOP:  1  8  6   	2.853315e+00	( 2 2 3 5 5 4  )
+G_LOOP:  1  9  6   	2.852865e+00	( 3 3 0 4 4 7  )
+G_LOOP:  1  10  6   	2.852890e+00	( 3 3 1 4 4 6  )
+G_LOOP:  1  11  6   	2.852005e+00	( 3 3 2 4 4 5  )
+G_LOOP:  2  0  6   	2.850387e+00	( 0 1 2 7 6 5  )
+G_LOOP:  2  1  6   	2.849372e+00	( 0 1 5 7 6 2  )
+G_LOOP:  2  2  6   	2.855303e+00	( 0 6 2 7 1 5  )
+G_LOOP:  2  3  6   	2.852978e+00	( 0 6 5 7 1 2  )
+G_LOOP:  2  4  6   	2.854573e+00	( 0 1 3 7 6 4  )
+G_LOOP:  2  5  6   	2.857927e+00	( 0 1 4 7 6 3  )
+G_LOOP:  2  6  6   	2.859545e+00	( 0 6 3 7 1 4  )
+G_LOOP:  2  7  6   	2.852495e+00	( 0 6 4 7 1 3  )
+G_LOOP:  2  8  6   	2.853929e+00	( 0 2 3 7 5 4  )
+G_LOOP:  2  9  6   	2.851100e+00	( 0 2 4 7 5 3  )
+G_LOOP:  2  10  6   	2.852680e+00	( 0 5 3 7 2 4  )
+G_LOOP:  2  11  6   	2.847304e+00	( 0 5 4 7 2 3  )
+G_LOOP:  2  12  6   	2.854721e+00	( 1 2 3 6 5 4  )
+G_LOOP:  2  13  6   	2.850778e+00	( 1 2 4 6 5 3  )
+G_LOOP:  2  14  6   	2.856697e+00	( 1 5 3 6 2 4  )
+G_LOOP:  2  15  6   	2.852973e+00	( 1 5 4 6 2 3  )
+GACTION: 4.255611e-01
+restore_fermion_links_fm: Warning. Precision request replaced by 1
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.160908e-02 (asqtad F) mflops = 1.117757e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.160502e-02 (asqtad F) mflops = 1.118147e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157188e-02 (asqtad F) mflops = 1.121350e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.158905e-02 (asqtad F) mflops = 1.119689e+04
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.107679e-07, true = 6.107679e-07
+CONGRAD5: time = 4.697084e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.140400e+03
+ OK converged final_rsq= 3.7e-13 (cf 1e-12) rel = 1.5e-10 (cf 0) restarts = 0 iters= 16
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.815564e-07, true = 6.815564e-07
+CONGRAD5: time = 4.513025e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.309262e+03
+ OK converged final_rsq= 4.6e-13 (cf 1e-12) rel = 1.7e-10 (cf 0) restarts = 0 iters= 16
+GFTIME:   time = 3.752518e-02 (Symanzik1) mflops = 4.175226e+03
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.159716e-02 (asqtad F) mflops = 1.118906e+04
+OPTIME: time = 3.290176e-04 (asqtad3)
+FFTIME: time = 3.272295e-02 (asqtad3)
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157880e-02 (asqtad F) mflops = 1.120680e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.155806e-02 (asqtad F) mflops = 1.122691e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.155615e-02 (asqtad F) mflops = 1.122877e+04
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.551264e-07, true = 6.551264e-07
+CONGRAD5: time = 4.484892e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.336294e+03
+ OK converged final_rsq= 4.3e-13 (cf 1e-12) rel = 1.6e-10 (cf 0) restarts = 0 iters= 16
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 5.983745e-07, true = 5.983745e-07
+CONGRAD5: time = 4.534960e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.288419e+03
+ OK converged final_rsq= 3.6e-13 (cf 1e-12) rel = 1.4e-10 (cf 0) restarts = 0 iters= 16
+GFTIME:   time = 3.734803e-02 (Symanzik1) mflops = 4.195030e+03
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157498e-02 (asqtad F) mflops = 1.121049e+04
+OPTIME: time = 3.290176e-04 (asqtad3)
+FFTIME: time = 3.264904e-02 (asqtad3)
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157403e-02 (asqtad F) mflops = 1.121142e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.163983e-02 (asqtad F) mflops = 1.114804e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.159215e-02 (asqtad F) mflops = 1.119389e+04
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.751993e-07, true = 6.751993e-07
+CONGRAD5: time = 4.519939e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.302670e+03
+ OK converged final_rsq= 4.6e-13 (cf 1e-12) rel = 1.7e-10 (cf 0) restarts = 0 iters= 16
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.713377e-07, true = 6.713377e-07
+CONGRAD5: time = 4.418135e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.401814e+03
+ OK converged final_rsq= 4.5e-13 (cf 1e-12) rel = 1.7e-10 (cf 0) restarts = 0 iters= 16
+GFTIME:   time = 3.753090e-02 (Symanzik1) mflops = 4.174589e+03
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157498e-02 (asqtad F) mflops = 1.121049e+04
+OPTIME: time = 3.290176e-04 (asqtad3)
+FFTIME: time = 3.272891e-02 (asqtad3)
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157999e-02 (asqtad F) mflops = 1.120565e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.156998e-02 (asqtad F) mflops = 1.121534e+04
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.160908e-02 (asqtad F) mflops = 1.117757e+04
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.165414e-07, true = 6.165414e-07
+CONGRAD5: time = 4.775047e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.072799e+03
+ OK converged final_rsq= 3.8e-13 (cf 1e-12) rel = 1.5e-10 (cf 0) restarts = 0 iters= 16
+CG: Convergence at 16 iterations, L2 relative residual: iterated = 6.174865e-07, true = 6.174865e-07
+CONGRAD5: time = 4.422903e-03 (fn_QUDA F) masses = 1 iters = 16 mflops = 4.397069e+03
+ OK converged final_rsq= 3.8e-13 (cf 1e-12) rel = 1.4e-10 (cf 0) restarts = 0 iters= 16
+GFTIME:   time = 3.734517e-02 (Symanzik1) mflops = 4.195351e+03
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.166916e-02 (asqtad F) mflops = 1.112002e+04
+OPTIME: time = 3.290176e-04 (asqtad3)
+FFTIME: time = 3.268909e-02 (asqtad3)
+PLAQ:	2.819166	2.820380
+P_LOOP:	2.814011e+00	9.110358e-04
+G_LOOP:  0  0  4   	2.815044e+00	( 0 1 7 6  )
+G_LOOP:  0  1  4   	2.818093e+00	( 0 2 7 5  )
+G_LOOP:  0  2  4   	2.822529e+00	( 0 3 7 4  )
+G_LOOP:  0  3  4   	2.824362e+00	( 1 2 6 5  )
+G_LOOP:  0  4  4   	2.818922e+00	( 1 3 6 4  )
+G_LOOP:  0  5  4   	2.819690e+00	( 2 3 5 4  )
+G_LOOP:  1  0  6   	2.719219e+00	( 0 0 1 7 7 6  )
+G_LOOP:  1  1  6   	2.725918e+00	( 0 0 2 7 7 5  )
+G_LOOP:  1  2  6   	2.733464e+00	( 0 0 3 7 7 4  )
+G_LOOP:  1  3  6   	2.729633e+00	( 1 1 0 6 6 7  )
+G_LOOP:  1  4  6   	2.734683e+00	( 1 1 2 6 6 5  )
+G_LOOP:  1  5  6   	2.729056e+00	( 1 1 3 6 6 4  )
+G_LOOP:  1  6  6   	2.728120e+00	( 2 2 0 5 5 7  )
+G_LOOP:  1  7  6   	2.731862e+00	( 2 2 1 5 5 6  )
+G_LOOP:  1  8  6   	2.730386e+00	( 2 2 3 5 5 4  )
+G_LOOP:  1  9  6   	2.733420e+00	( 3 3 0 4 4 7  )
+G_LOOP:  1  10  6   	2.724273e+00	( 3 3 1 4 4 6  )
+G_LOOP:  1  11  6   	2.731355e+00	( 3 3 2 4 4 5  )
+G_LOOP:  2  0  6   	2.721694e+00	( 0 1 2 7 6 5  )
+G_LOOP:  2  1  6   	2.718825e+00	( 0 1 5 7 6 2  )
+G_LOOP:  2  2  6   	2.732168e+00	( 0 6 2 7 1 5  )
+G_LOOP:  2  3  6   	2.723713e+00	( 0 6 5 7 1 2  )
+G_LOOP:  2  4  6   	2.729455e+00	( 0 1 3 7 6 4  )
+G_LOOP:  2  5  6   	2.729364e+00	( 0 1 4 7 6 3  )
+G_LOOP:  2  6  6   	2.731451e+00	( 0 6 3 7 1 4  )
+G_LOOP:  2  7  6   	2.729194e+00	( 0 6 4 7 1 3  )
+G_LOOP:  2  8  6   	2.730079e+00	( 0 2 3 7 5 4  )
+G_LOOP:  2  9  6   	2.729044e+00	( 0 2 4 7 5 3  )
+G_LOOP:  2  10  6   	2.731940e+00	( 0 5 3 7 2 4  )
+G_LOOP:  2  11  6   	2.732759e+00	( 0 5 4 7 2 3  )
+G_LOOP:  2  12  6   	2.729935e+00	( 1 2 3 6 5 4  )
+G_LOOP:  2  13  6   	2.727758e+00	( 1 2 4 6 5 3  )
+G_LOOP:  2  14  6   	2.731441e+00	( 1 5 3 6 2 4  )
+G_LOOP:  2  15  6   	2.731033e+00	( 1 5 4 6 2 3  )
+GACTION: 7.844325e-01
+restore_fermion_links_fm: Warning. Precision request replaced by 1
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+Long-link path coefficient = -0.058479
+FLTIME: time = 1.157188e-02 (asqtad F) mflops = 1.121350e+04
+RUNNING COMPLETED
+average cg iters for step= 3.200000e+01
+Time = 1.410451e+01 seconds
+total_iters = 256
+
+
+get_i(0): EOF on input.
+
+               initQuda Total time = 5.74904 secs
+
+          loadGaugeQuda Total time = 0.019487 secs
+              download     = 0.018677 secs (  95.8%), with        2 calls at 9.338500e+03 us per call
+                  init     = 0.000793 secs (  4.07%), with        2 calls at 3.965000e+02 us per call
+               compute     = 0.000001 secs (0.00513%), with        2 calls at 5.000000e-01 us per call
+                  free     = 0.000006 secs (0.0308%), with        2 calls at 3.000000e+00 us per call
+     total accounted       = 0.019477 secs (  99.9%)
+     total missing         = 0.000010 secs (0.0513%)
+
+             invertQuda Total time = 4.10058 secs
+              download     = 0.011554 secs ( 0.282%), with       16 calls at 7.221250e+02 us per call
+                upload     = 0.002744 secs (0.0669%), with       16 calls at 1.715000e+02 us per call
+                  init     = 0.985497 secs (    24%), with       16 calls at 6.159356e+04 us per call
+              preamble     = 0.000012 secs (0.000293%), with       16 calls at 7.500000e-01 us per call
+               compute     = 2.141188 secs (  52.2%), with       16 calls at 1.338242e+05 us per call
+              epilogue     = 0.932157 secs (  22.7%), with       16 calls at 5.825981e+04 us per call
+                  free     = 0.000010 secs (0.000244%), with       16 calls at 6.250000e-01 us per call
+     total accounted       = 4.073162 secs (  99.3%)
+     total missing         = 0.027417 secs ( 0.669%)
+
+                endQuda Total time = 0.10357 secs
+
+Device memory used = 3.5 MB
+Page-locked host memory used = 1.9 MB
+Total host memory used >= 2.2 MB
+
+
+   AsqtadForceInterface Total time = 3.46426 secs
+              download     = 0.003493 secs ( 0.101%), with       16 calls at 2.183125e+02 us per call
+                upload     = 0.001074 secs ( 0.031%), with        8 calls at 1.342500e+02 us per call
+                  init     = 0.002404 secs (0.0694%), with        8 calls at 3.005000e+02 us per call
+               compute     = 3.452742 secs (  99.7%), with       16 calls at 2.157964e+05 us per call
+                  free     = 0.001226 secs (0.0354%), with        8 calls at 1.532500e+02 us per call
+              constant     = 0.003184 secs (0.0919%), with       24 calls at 1.326667e+02 us per call
+     total accounted       = 3.464123 secs (   100%)
+     total missing         = 0.000137 secs (0.00395%)
+exit: Tue Sep 17 13:09:10 2013
+
