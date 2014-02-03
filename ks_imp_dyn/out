@@ -1,5 +1,5 @@
 make -f Make_time time
-make[1]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/ks_imp_dyn'
+make[1]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/ks_imp_dyn'
 for proj in su3_rmd;\
 	do\
 	     make $proj "CTIME = -DCGTIME -DFFTIME -DLLTIME -DGFTIME -DREMAP" ;\
@@ -7,36 +7,27 @@ for proj in su3_rmd;\
 	     /bin/rm -f $proj;\
 	     /bin/rm -f localmake*;\
 	done
-make[2]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/ks_imp_dyn'
+make[2]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/ks_imp_dyn'
 make -f Makefile target "MYTARGET= su3_rmd" \
 	"DEFINES= -DFN -UKS_MULTICG" \
 	"GAUGE = symanzik_1loop_action.h" \
 	"QUARK = asqtad_action.h" \
 	"EXTRA_OBJECTS= fermion_links_from_site.o f_meas.o gauss_smear_ks.o grsource_imp.o naik_eps_utilities.o path_transport.o rephase.o show_generic_ks_opts.o show_hisq_links_opts.o show_hypisq_links_opts.o fermion_links_milc.o fermion_links.o fermion_links_fn_load_milc.o fermion_links_fn_twist_milc.o general_staple.o fn_links_milc.o ks_action_paths.o d_congrad5_fn_gpu.o d_congrad5_two_src.o d_congrad5_fn_milc.o mat_invert.o ks_invert.o d_congrad5_fn.o d_congrad_opt.o report_invert_status.o dslash_fn_dblstore.o ks_multicg_offset_gpu.o ks_multicg.o ks_multicg_offset.o fermion_force_asqtad.o fermion_force_multi.o fermion_force_fn_multi.o show_hisq_force_opts.o show_hypisq_force_opts.o ff_opt.o  fermion_force_asqtad_gpu.o  gauge_force_imp.o gauge_stuff.o ranmom.o update.o"
-make[3]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/ks_imp_dyn'
+make[3]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/ks_imp_dyn'
 Building libraries with Make_vanilla
 cd ../libraries ;\
 	make -f Make_vanilla   "APP_CC=mpicc" "PRECISION=2" all
-make[4]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/libraries'
+make[4]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/libraries'
 ================================================================
 PLEASE CHECK COMPILERS: Libraries: gcc . Application: mpicc
 ================================================================
-make[4]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/libraries'
-mpicc -c -O3 -Wall  -DHAVE_QUDA -DMPI -DCGTIME -DFFTIME -DLLTIME -DGFTIME -DREMAP  -DCG_OK     -DDBLSTORE_FN -DD_FN_GATHER13 -DFEWSUMS  -DKS_MULTICG=HYBRID -DHALF_MIXED   -DNO_REFINE -DKS_MULTIFF=FNMAT   -DCL_CG=BICG      -DC_GLOBAL_INLINE  -DPRECISION=2   -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE       -I.  -DUSE_CG_GPU -DUSE_FF_GPU -DFN -UKS_MULTICG    -I/uufs/chpc.utah.edu/common/home/u0731948/quda_new/quda/include -I/lib -I/uufs/chpc.utah.edu/common/home/u0731948/quda_new/quda/tests -I/usr/local/cuda/include  ../generic_ks/fermion_force_asqtad_gpu.c
-../generic_ks/fermion_force_asqtad_gpu.c: In function ‘fermion_force_oprod_site’:
-../generic_ks/fermion_force_asqtad_gpu.c:127: warning: implicit declaration of function ‘qudaComputeOprod’
-../generic_ks/fermion_force_asqtad_gpu.c:44: warning: unused variable ‘temp_mat’
-../generic_ks/fermion_force_asqtad_gpu.c:19: warning: unused variable ‘mtag’
-../generic_ks/fermion_force_asqtad_gpu.c:18: warning: unused variable ‘j’
-../generic_ks/fermion_force_asqtad_gpu.c: In function ‘eo_fermion_force_twoterms_site_gpu’:
-../generic_ks/fermion_force_asqtad_gpu.c:215: warning: implicit declaration of function ‘initialize_quda’
-../generic_ks/fermion_force_asqtad_gpu.c:270: warning: implicit declaration of function ‘qudaAsqtadForce’
+make[4]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/libraries'
 mpicxx -o su3_rmd  \
 	control.o gauge_info.o setup.o update_h.o update_u.o ape_smear.o check_unitarity.o d_plaq4.o gaugefix2.o io_lat4.o momentum_twist.o nersc_cksum.o path_product.o project_su3_hit.o reunitarize2.o show_generic_opts.o milc_to_quda_utilities.o layout_hyper_prime.o  field_translation.o field_utilities.o gauge_utilities.o io_detect.o io_helpers.o io_lat_utils.o make_lattice.o ranstuff.o remap_stdio_from_args.o io_ansi.o  com_mpi.o ploop3.o show_generic_ks_md_opts.o fermion_links_from_site.o f_meas.o gauss_smear_ks.o grsource_imp.o naik_eps_utilities.o path_transport.o rephase.o show_generic_ks_opts.o show_hisq_links_opts.o show_hypisq_links_opts.o fermion_links_milc.o fermion_links.o fermion_links_fn_load_milc.o fermion_links_fn_twist_milc.o general_staple.o fn_links_milc.o ks_action_paths.o d_congrad5_fn_gpu.o d_congrad5_two_src.o d_congrad5_fn_milc.o mat_invert.o ks_invert.o d_congrad5_fn.o d_congrad_opt.o report_invert_status.o dslash_fn_dblstore.o ks_multicg_offset_gpu.o ks_multicg.o ks_multicg_offset.o fermion_force_asqtad.o fermion_force_multi.o fermion_force_fn_multi.o show_hisq_force_opts.o show_hypisq_force_opts.o ff_opt.o  fermion_force_asqtad_gpu.o  gauge_force_imp.o gauge_stuff.o ranmom.o update.o ../libraries/su3.2.a ../libraries/complex.2.a          -L/uufs/chpc.utah.edu/common/home/u0731948/quda_new/quda/lib -lquda -L/usr/local/cuda/lib64 -lcudart -lm
 touch localmake
-make[3]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/ks_imp_dyn'
-make[2]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/ks_imp_dyn'
-make[2]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/ks_imp_dyn'
+make[3]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/ks_imp_dyn'
+make[2]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/ks_imp_dyn'
+make[2]: Entering directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/ks_imp_dyn'
 ./su3_rmd  < in.time.su3_rmd > out.time.su3_rmd
-make[2]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/ks_imp_dyn'
-make[1]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_trinity/ks_imp_dyn'
+make[2]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/ks_imp_dyn'
+make[1]: Leaving directory `/uufs/chpc.utah.edu/common/home/u0731948/milc_qcd-7.7.10-a8_quda/ks_imp_dyn'

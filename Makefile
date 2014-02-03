@@ -19,7 +19,7 @@ MAKEFILE = Makefile
 # 2. Architecture
 
 # Compiling for a parallel machine?  blank for a scalar machine
-#MPP = true
+MPP = true
 
 #----------------------------------------------------------------------
 # 3. Precision 

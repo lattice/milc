@@ -69,9 +69,7 @@ load_lnglinks(info_t *info, su3_matrix *lng, ks_component_paths *p,
 
   staple = create_m_special();
   tempmat1 = create_m_special();
-  int print_coeff;
   for (dir=XUP; dir<=TUP; dir++){ /* loop over longlink directions */
-    print_coeff=1;
     /* set longlink to zero */
     FORALLFIELDSITES_OMP(i,private(long1)){
       long1 = lng + 4*i +dir;
@@ -112,10 +110,6 @@ printf("\n");**/
 	    &staple[i], -q_paths[ipath].coeff, long1 );
 		/* minus sign in coeff. because we used backward path*/
 	}
-        if(print_coeff){
-          printf("Long-link path coefficient = %lf\n", -q_paths[ipath].coeff);
-          print_coeff=0;
-        }
     } /* ipath */
 
   } /* loop over directions */

@@ -19,7 +19,7 @@ MAKEFILE = Makefile
 # 2. Architecture
 
 # Compiling for a parallel machine?  blank for a scalar machine
-MPP = #true
+MPP = true
 
 #----------------------------------------------------------------------
 # 3. Precision 
@@ -222,9 +222,9 @@ endif
 
 WANTQUDA    = true
 WANT_CL_BCG_GPU = #true
-WANT_FN_CG_GPU =   true
+WANT_FN_CG_GPU =  true
 WANT_FL_GPU =  #true
-WANT_FF_GPU = #true
+WANT_FF_GPU = true
 WANT_GF_GPU = #true
 
 ifeq ($(strip ${WANTQUDA}),true)

@@ -18,6 +18,11 @@ static void fermion_force_oprod_site(Real eps, Real weight1, Real weight2,
   int i, j, dir;
   msg_tag* mtag[2];
 
+
+  double coeff1[2] = {2.0*eps*weight1, 2.0*eps*weight1};
+  double coeff2[2] = {2.0*eps*weight1, 2.0*eps*weight2};
+
+
   { // copy the quark-field information to su3_vector fields
     v[0] = (su3_vector*)malloc(sites_on_node*sizeof(su3_vector));
     v[1] = (su3_vector*)malloc(sites_on_node*sizeof(su3_vector));
@@ -31,22 +36,26 @@ static void fermion_force_oprod_site(Real eps, Real weight1, Real weight2,
     }
   }
 
+  su3_matrix temp_mat; 
+
   for(dir=XUP; dir<=TUP; ++dir){
     memset(one_hop_oprod[dir], 0, sites_on_node*sizeof(su3_matrix));
     memset(three_hop_oprod[dir], 0, sites_on_node*sizeof(su3_matrix));
   }
+
+  void* oprod[2] = {one_hop_oprod, three_hop_oprod};
 
   double** combined_coeff;
   combined_coeff = (double**)malloc(2*sizeof(double*));
   combined_coeff[0] = (double*)malloc(2*sizeof(double));
   combined_coeff[1] = (double*)malloc(2*sizeof(double));
 
-  combined_coeff[0][0] = 2*eps*weight1;
-  combined_coeff[0][1] = 2*eps*weight2;
-  combined_coeff[1][0] = 2*eps*weight1;
-  combined_coeff[1][1] = 2*eps*weight2;
 
-  void* oprod[2] = {one_hop_oprod, three_hop_oprod};
+  combined_coeff[0][0] = coeff1[0];
+  combined_coeff[0][1] = coeff1[1];
+  combined_coeff[1][0] = coeff2[0];
+  combined_coeff[1][1] = coeff2[1];
+
 
   qudaComputeOprod(PRECISION, 2, combined_coeff, v, oprod);
 
@@ -54,9 +63,9 @@ static void fermion_force_oprod_site(Real eps, Real weight1, Real weight2,
   free(combined_coeff[1]);
   free(combined_coeff);
 
-  // Cleanup
   free(v[0]);
   free(v[1]);
+  return;
 }     
 
 
@@ -126,12 +135,10 @@ void eo_fermion_force_twoterms_site_gpu(Real eps, Real weight1, Real weight2,
       (const void* const*)three_link_oprod,
       gauge , momentum);
 
-  Real mtemp;
   // Copy result to site structure
   FORALLSITES(i,s){
     for(dir=0; dir<4; ++dir){
       for(j=0; j<10; ++j){
-        mtemp = *(momentum + (4*i+ dir)*10 + j);
         *((Real*)(&(s->mom[dir])) + j) += *(momentum + (4*i+ dir)*10 + j);
       }
     }

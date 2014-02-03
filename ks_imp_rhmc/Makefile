@@ -19,7 +19,7 @@ MAKEFILE = Makefile
 # 2. Architecture
 
 # Compiling for a parallel machine?  blank for a scalar machine
-MPP = #true
+MPP = true
 
 #----------------------------------------------------------------------
 # 3. Precision 
@@ -220,16 +220,16 @@ endif
 #----------------------------------------------------------------------
 # 14. GPU/QUDA Options
 
-WANTQUDA    = true
-WANT_CL_BCG_GPU = true
+WANTQUDA    =  true
+#WANT_CL_BCG_GPU = true
 WANT_FN_CG_GPU =  true
-WANT_FL_GPU =  true
-WANT_FF_GPU =  true
-WANT_GF_GPU = true
+#WANT_FL_GPU =  true
+#WANT_FF_GPU =  true
+#WANT_GF_GPU = true
 
 ifeq ($(strip ${WANTQUDA}),true)
 
-  QUDA_HOME = 
+  QUDA_HOME = /uufs/chpc.utah.edu/common/home/u0731948/quda_new/quda
   INCQUDA = -I${QUDA_HOME}/include -I/lib -I${QUDA_HOME}/tests
   LIBQUDA = -L${QUDA_HOME}/lib -lquda
   QUDA_LIBRARIES = ${QUDA_HOME}/lib

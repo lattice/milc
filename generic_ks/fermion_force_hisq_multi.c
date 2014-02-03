@@ -2016,6 +2016,8 @@ void outer_product_append_gpu(Real one_hop_coeff, Real three_hop_coeff, Real *re
 
   void* oprod[2] = {one_hop_oprod, three_hop_oprod};
 
+  printf("Calling outer_product_append_gpu\n");
+
   //qudaComputeOprod(PRECISION, nterms, coeff, multi_x, oprod);
   
   for(term=0; term<nterms; ++term){

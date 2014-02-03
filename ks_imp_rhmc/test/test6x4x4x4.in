@@ -1,8 +1,8 @@
     prompt 0
-    nx 4
+    nx 6
     ny 4
     nz 4
-    nt 16
+    nt 4
     iseed 86658
     n_pseudo 4
     load_rhmc_params rationals.sample.su3_rhmc_hisq
@@ -16,7 +16,7 @@
     trajecs 1
     traj_between_meas 1
     microcanonical_time_step .02
-    steps_per_trajectory 40
+    steps_per_trajectory 10
     cgresid_md_fa_gr 1e-8 1e-8 1e-8
     max_multicg_md_fa_gr  2500  2500  2500
     cgprec_md_fa_gr  2 2 2
