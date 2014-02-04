@@ -4,7 +4,9 @@
 *  MIMD version 7 	 				            *
 */
 
+#ifdef HAVE_QUDA
 #include <quda_milc_interface.h>
+#endif
 
 int initialize_quda(void);
 
