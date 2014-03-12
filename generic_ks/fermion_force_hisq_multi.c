@@ -2257,8 +2257,6 @@ fn_fermion_force_multi_hisq_wrapper_mx_gpu(info_t* info, Real eps, Real *residue
   
   n_naik_shift = 0;
   n_orders_naik_current = n_order_naik_total;
-//  Real one_hop_coeff = 2.0*eps;
-//  Real three_hop_coeff = ap->p2.act_path_coeff.naik*2.0*eps;   
  
   Real* one_hop_coeff = (Real*)malloc(n_orders_naik_current*sizeof(Real));
   Real* three_hop_coeff = (Real*)malloc(n_orders_naik_current*sizeof(Real));
@@ -2284,30 +2282,6 @@ fn_fermion_force_multi_hisq_wrapper_mx_gpu(info_t* info, Real eps, Real *residue
   }
   
   n_naik_shift = n_orders_naik[0];
-
-  printf("n_naiks = %d\n", n_naiks);
-/*
-  for(inaik=1; inaik<n_naiks; ++inaik){
-    n_orders_naik_current = n_orders_naik[inaik];
-    
-    Real one_link_coeff = ap->p3.act_path_coeff.one_link*eps_naik[inaik]*2.0*eps;
-    Real three_link_coeff = ap->p3.act_path_coeff.naik*eps_naik[inaik]*2.0*eps;
-   
-    
-    node0_printf("Nterms2 : %d\n", n_orders_naik_current); 
-  //  outer_product_append_gpu(one_hop_coeff, 
-    outer_product_append(one_link_coeff, 
-			 three_link_coeff, 
-			 residues+n_naik_shift,
-			 multi_x+n_naik_shift, 
-                          n_orders_naik_current, 
-			 one_link_oprod,
-			 three_link_oprod);
-    
-    n_naik_shift += n_orders_naik[inaik];  
-  } // end loop over inaik
-*/
-
   n_orders_naik_current = 0;
   for(inaik=1; inaik<n_naiks; ++inaik){
     n_orders_naik_current += n_orders_naik[inaik];
