@@ -154,14 +154,15 @@ MACHINE_DEP_IO   = io_ansi.o # (io_ansi.o io_nonansi.o io_dcap.o)
 
 WANTQOP = # true # or blank. Implies HAVEQDP, HAVEQOP, HAVEQMP.
 
-WANTQIO = #true # or blank.  Implies HAVEQMP.
+WANTQIO = true # or blank.  Implies HAVEQMP.
 
-WANTQMP = # true or blank.
+WANTQMP = true or blank.
 
 # Edit these locations for the installed SciDAC packages
 # It is assumed that these are the parents of "include" and "lib"
 
-SCIDAC = ${HOME}/scidac/install
+SCIDAC = ${HOME}/scidac
+
 # Parallel versions
 QMPPAR = ${SCIDAC}/qmp
 QIOPAR = $(SCIDAC)/qio
@@ -222,14 +223,14 @@ endif
 
 WANTQUDA    =  true
 WANT_CL_BCG_GPU =# true
-WANT_FN_CG_GPU =  true
+WANT_FN_CG_GPU =  #true
 WANT_FL_GPU = # true
-WANT_FF_GPU =  true
+WANT_FF_GPU =   #true
 WANT_GF_GPU = # true
 
 ifeq ($(strip ${WANTQUDA}),true)
 
-  QUDA_HOME = /uufs/chpc.utah.edu/common/home/u0731948/quda_old
+  QUDA_HOME = /uufs/chpc.utah.edu/common/home/u0731948/quda-0.7
   INCQUDA = -I${QUDA_HOME}/include -I/lib -I${QUDA_HOME}/tests
   LIBQUDA = -L${QUDA_HOME}/lib -lquda
   QUDA_LIBRARIES = ${QUDA_HOME}/lib
@@ -414,7 +415,7 @@ CCOMPAT += #-DOLD_STAGGERED2NAIVE
 #     and extra list of dimensions in the parameter input file.
 #     See e.g. ks_imp_rhmc.
 
-CGEOM =#-DFIX_NODE_GEOM
+CGEOM = -DFIX_NODE_GEOM
 
 #------------------------------
 # I/O node grid layout
