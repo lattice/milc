@@ -2000,7 +2000,7 @@ fn_fermion_force_multi_hisq_reunit( info_t *info, su3_matrix *force_accum[4],
 
 
 
-void outer_product_append_gpu(Real one_hop_coeff, Real three_hop_coeff, Real *residues, 
+void outer_product_append_gpu(Real* one_hop_coeff, Real* three_hop_coeff, 
                               su3_vector** multi_x, int nterms,
                               su3_matrix *one_hop_oprod[4], 
                               su3_matrix *three_hop_oprod[4])
@@ -2010,15 +2010,15 @@ void outer_product_append_gpu(Real one_hop_coeff, Real three_hop_coeff, Real *re
   double** coeff = (double**)malloc(nterms*sizeof(double*));
   for(term=0; term<nterms; ++term){
     coeff[term] = (double*)malloc(2*sizeof(double));
-    coeff[term][0] = residues[term]*one_hop_coeff;
-    coeff[term][1] = residues[term]*three_hop_coeff;
+    coeff[term][0] = one_hop_coeff[term];
+    coeff[term][1] = three_hop_coeff[term];
   }
 
   void* oprod[2] = {one_hop_oprod, three_hop_oprod};
 
   printf("Calling outer_product_append_gpu\n");
 
-  //qudaComputeOprod(PRECISION, nterms, coeff, multi_x, oprod);
+  qudaComputeOprod(PRECISION, nterms, coeff, multi_x, oprod);
   
   for(term=0; term<nterms; ++term){
     free(coeff[term]);
@@ -2181,8 +2181,7 @@ static void outer_product_append( Real one_hop_coeff, Real three_hop_coeff,
 } // outer_product_append
 
 
-static void outer_product_create( Real one_hop_coeff, Real three_hop_coeff, 
-	  Real *residues, 
+static void outer_product_create( Real* one_hop_coeff, Real* three_hop_coeff, 
 	  su3_vector **multi_x, int nterms,
 	  su3_matrix *one_hop_oprod[4], su3_matrix *three_hop_oprod[4] )
 {
@@ -2195,8 +2194,10 @@ static void outer_product_create( Real one_hop_coeff, Real three_hop_coeff,
   }
  
   node0_printf("Nterm1 : %d\n", nterms); 
-  outer_product_append(one_hop_coeff, three_hop_coeff,
-		       residues, 
+
+
+  outer_product_append_gpu(one_hop_coeff, 
+                       three_hop_coeff,
 		       multi_x, 
 		       nterms,
 		       one_hop_oprod,
@@ -2256,12 +2257,25 @@ fn_fermion_force_multi_hisq_wrapper_mx_gpu(info_t* info, Real eps, Real *residue
   
   n_naik_shift = 0;
   n_orders_naik_current = n_order_naik_total;
-  Real one_hop_coeff = 2.0*eps;
-  Real three_hop_coeff = ap->p2.act_path_coeff.naik*2.0*eps;   
-  
-  outer_product_create(one_hop_coeff, three_hop_coeff, residues, 
-		       multi_x, n_orders_naik_current, staple_oprod, three_link_oprod);
-  
+//  Real one_hop_coeff = 2.0*eps;
+//  Real three_hop_coeff = ap->p2.act_path_coeff.naik*2.0*eps;   
+ 
+  Real* one_hop_coeff = (Real*)malloc(n_orders_naik_current*sizeof(Real));
+  Real* three_hop_coeff = (Real*)malloc(n_orders_naik_current*sizeof(Real));
+
+  for(i=0; i<n_orders_naik_current; ++i){
+    one_hop_coeff[i] = 2.0*eps*residues[i];
+    three_hop_coeff[i] = ap->p2.act_path_coeff.naik*2.0*eps*residues[i];
+  }
+ 
+  outer_product_create(one_hop_coeff, three_hop_coeff, 
+		       multi_x, n_orders_naik_current, 
+                       staple_oprod, three_link_oprod);
+
+  free(one_hop_coeff);
+  free(three_hop_coeff);
+
+
   for(dir=XUP; dir<=TUP; ++dir){
     FORALLFIELDSITES(i){
       scalar_mult_su3_matrix(&(staple_oprod[dir][i]), ap->p2.act_path_coeff.one_link, 
@@ -2270,23 +2284,66 @@ fn_fermion_force_multi_hisq_wrapper_mx_gpu(info_t* info, Real eps, Real *residue
   }
   
   n_naik_shift = n_orders_naik[0];
+
+  printf("n_naiks = %d\n", n_naiks);
+/*
   for(inaik=1; inaik<n_naiks; ++inaik){
     n_orders_naik_current = n_orders_naik[inaik];
     
-    one_hop_coeff = ap->p3.act_path_coeff.one_link*eps_naik[inaik]*2.0*eps;
-    three_hop_coeff = ap->p3.act_path_coeff.naik*eps_naik[inaik]*2.0*eps;
+    Real one_link_coeff = ap->p3.act_path_coeff.one_link*eps_naik[inaik]*2.0*eps;
+    Real three_link_coeff = ap->p3.act_path_coeff.naik*eps_naik[inaik]*2.0*eps;
    
     
     node0_printf("Nterms2 : %d\n", n_orders_naik_current); 
-    outer_product_append(one_hop_coeff, 
-			 three_hop_coeff, 
+  //  outer_product_append_gpu(one_hop_coeff, 
+    outer_product_append(one_link_coeff, 
+			 three_link_coeff, 
 			 residues+n_naik_shift,
-			 multi_x+n_naik_shift, n_orders_naik_current, 
+			 multi_x+n_naik_shift, 
+                          n_orders_naik_current, 
 			 one_link_oprod,
 			 three_link_oprod);
     
     n_naik_shift += n_orders_naik[inaik];  
   } // end loop over inaik
+*/
+
+  n_orders_naik_current = 0;
+  for(inaik=1; inaik<n_naiks; ++inaik){
+    n_orders_naik_current += n_orders_naik[inaik];
+  }
+
+  one_hop_coeff = (Real*)malloc(n_orders_naik_current*sizeof(Real));
+  three_hop_coeff = (Real*)malloc(n_orders_naik_current*sizeof(Real));
+
+  i=0; 
+  n_naik_shift = n_orders_naik[0];
+  for(inaik=1; inaik<n_naiks; ++inaik){
+    for(j=0; j<n_orders_naik[inaik]; j++){
+      one_hop_coeff[i] = ap->p3.act_path_coeff.one_link*eps_naik[inaik]*2.0*eps*residues[n_naik_shift+j];
+      three_hop_coeff[i++] = ap->p3.act_path_coeff.naik*eps_naik[inaik]*2.0*eps*residues[n_naik_shift+j];
+    }
+    n_naik_shift += n_orders_naik[inaik];
+  }
+
+  outer_product_append_gpu(one_hop_coeff,
+                       three_hop_coeff,
+                       multi_x+n_orders_naik[0],
+                       n_orders_naik_current,
+                       one_link_oprod,
+                       three_link_oprod);
+
+
+  free(one_hop_coeff); 
+  free(three_hop_coeff);
+  
+
+
+  
+
+
+
+
   // done constructing the outer products
   
   Real* momentum = (Real*)special_alloc(sites_on_node*4*sizeof(anti_hermitmat));

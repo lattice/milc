@@ -31,7 +31,7 @@ PRECISION = 2
 # 4. Compiler
 # Choices include mpicc cc gcc pgcc g++
 # Note: If you are linking with QUDA, you need the C++ linker,
-# so you may as well compile and link everything, including the libraries, with C++
+
 
 ifeq ($(strip ${MPP}),true)
 #  CC = gcc
@@ -222,14 +222,14 @@ endif
 
 WANTQUDA    =  true
 WANT_CL_BCG_GPU =# true
-WANT_FN_CG_GPU = # true
+WANT_FN_CG_GPU =  true
 WANT_FL_GPU = # true
-WANT_FF_GPU = # true
+WANT_FF_GPU =  true
 WANT_GF_GPU = # true
 
 ifeq ($(strip ${WANTQUDA}),true)
 
-  QUDA_HOME = /uufs/chpc.utah.edu/common/home/u0731948/quda_new/quda
+  QUDA_HOME = /uufs/chpc.utah.edu/common/home/u0731948/quda_old
   INCQUDA = -I${QUDA_HOME}/include -I/lib -I${QUDA_HOME}/tests
   LIBQUDA = -L${QUDA_HOME}/lib -lquda
   QUDA_LIBRARIES = ${QUDA_HOME}/lib

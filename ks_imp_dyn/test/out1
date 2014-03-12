@@ -1,0 +1,335 @@
+SU3 with improved KS action
+Microcanonical simulation with refreshing
+R algorithm
+MIMD version 7.7.10-a8
+Machine = MPI (portable), with 1 nodes
+Host(0) = feynman.chpc.utah.edu
+Username = u0731948
+Options selected...
+Generic double precision
+C_GLOBAL_INLINE
+DBLSTORE_FN
+D_FN_GATHER13
+FEWSUMS
+KS_MULTIFF=FNMAT
+VECLENGTH=4
+type 0 for no prompts, 1 for prompts, or 2 for proofreading
+nflavors1 4
+nflavors2 4
+nx 4
+ny 4
+nz 16
+nt 4
+iseed 5682304
+LAYOUT = Hypercubes, options = with fixed node_geometry
+ON EACH NODE 4 x 4 x 16 x 4
+Mallocing 1.9 MBytes per node for lattice
+Made lattice
+Made nn gathers
+Made 3nn gathers
+Finished setup
+
+
+warms 0
+trajecs 2
+traj_between_meas 1
+beta 7
+mass1 0.1
+mass2 0.1
+u0 0.8441
+microcanonical_time_step 0.02
+steps_per_trajectory 4
+max_cg_iterations 1500
+max_cg_restarts 5
+error_per_site 1e-09
+error_for_propagator 1e-12
+fresh 
+forget 
+unit gauge configuration loaded
+CHECK PLAQ: 3.0000000000000000e+00 3.0000000000000000e+00
+CHECK NERSC LINKTR: 1.0000000000000000e+00 CKSUM: 0
+Reunitarized for double precision. Max deviation 0.00e+00 changed to 0.00e+00
+Time to check unitarity = 1.525879e-03
+"O(a^2): couplings(pi)=0, Naik term, No O(a^2) errors, tadpole weights"
+path coefficients: npath  path_coeff  multiplicity
+                    0      6.250000e-01     8
+                    1      -5.847914e-02     8
+                    2      -8.771871e-02     48
+                    3      3.077829e-02     192
+                    4      -7.199550e-03     384
+                    5      -1.231131e-01     48
+FLTIME: time = 1.352191e-02 (asqtad D) mflops = 4.798186e+03
+Symanzik 1x1 + 1x2 + 1x1x1 action
+gauge_action: total_dyn_flavors = 8
+loop coefficients: nloop rep loop_coeff  multiplicity
+                    0 0      1.000000e+00     6
+                    1 0      -7.762509e-02     12
+                    2 0      -1.031171e-02     16
+WARMUPS COMPLETED
+FLTIME: time = 1.320815e-02 (asqtad D) mflops = 9.824334e+03
+FLTIME: time = 1.315689e-02 (asqtad D) mflops = 9.862610e+03
+FLTIME: time = 1.316905e-02 (asqtad D) mflops = 9.853503e+03
+congrad: source_norm = 2.784484e+04
+Found device 0: Tesla K20c
+Found device 1: Tesla K20c
+Using device 0: Tesla K20c
+Setting NUMA affinity for device 0 to CPU core 0
+WARNING: Environment variable QUDA_RESOURCE_PATH is not set.
+WARNING: Caching of tuned parameters will be disabled.
+CG: Convergence at 23 iterations, L2 relative residual: iterated = 9.978344e-10, true = 9.978344e-10
+CONGRAD5: time = 9.065019e+00 (fn_QUDA D) masses = 1 iters = 23 mflops = 3.083967e+00
+ OK converged final_rsq= 1e-18 (cf 1e-18) rel = 3.6e-16 (cf 0) restarts = 0 iters= 23
+congrad: source_norm = 2.780870e+04
+CG: Convergence at 24 iterations, L2 relative residual: iterated = 2.724071e-10, true = 2.724071e-10
+CONGRAD5: time = 9.282112e-03 (fn_QUDA D) masses = 1 iters = 24 mflops = 3.142788e+03
+ OK converged final_rsq= 7.4e-20 (cf 1e-18) rel = 2.8e-17 (cf 0) restarts = 0 iters= 24
+GFTIME:   time = 4.975390e-02 (Symanzik1) mflops = 3.149021e+03
+FLTIME: time = 1.286101e-02 (asqtad D) mflops = 1.008951e+04
+OPTIME: time = 2.712965e-03 (asqtad3)
+arg.threads = 1024
+FFTIME: time = 4.472779e+00 (asqtad3)
+FLTIME: time = 1.282907e-02 (asqtad D) mflops = 1.011463e+04
+FLTIME: time = 1.277399e-02 (asqtad D) mflops = 1.015824e+04
+FLTIME: time = 1.276302e-02 (asqtad D) mflops = 1.016697e+04
+congrad: source_norm = 2.787441e+04
+CG: Convergence at 26 iterations, L2 relative residual: iterated = 6.908953e-10, true = 6.908953e-10
+CONGRAD5: time = 9.602070e-03 (fn_QUDA D) masses = 1 iters = 26 mflops = 3.291237e+03
+ OK converged final_rsq= 4.8e-19 (cf 1e-18) rel = 1.7e-16 (cf 0) restarts = 0 iters= 26
+congrad: source_norm = 2.921222e+04
+CG: Convergence at 26 iterations, L2 relative residual: iterated = 6.126551e-10, true = 6.126551e-10
+CONGRAD5: time = 9.467125e-03 (fn_QUDA D) masses = 1 iters = 26 mflops = 3.338151e+03
+ OK converged final_rsq= 3.8e-19 (cf 1e-18) rel = 1.5e-16 (cf 0) restarts = 0 iters= 26
+GFTIME:   time = 4.976892e-02 (Symanzik1) mflops = 3.148071e+03
+FLTIME: time = 1.279783e-02 (asqtad D) mflops = 1.013932e+04
+OPTIME: time = 2.603054e-03 (asqtad3)
+arg.threads = 1024
+FFTIME: time = 7.760906e-02 (asqtad3)
+FLTIME: time = 1.285791e-02 (asqtad D) mflops = 1.009194e+04
+FLTIME: time = 1.276493e-02 (asqtad D) mflops = 1.016545e+04
+FLTIME: time = 1.276207e-02 (asqtad D) mflops = 1.016773e+04
+congrad: source_norm = 2.867165e+04
+CG: Convergence at 27 iterations, L2 relative residual: iterated = 6.777878e-10, true = 6.777878e-10
+CONGRAD5: time = 9.829044e-03 (fn_QUDA D) masses = 1 iters = 27 mflops = 3.338898e+03
+ OK converged final_rsq= 4.6e-19 (cf 1e-18) rel = 1.7e-16 (cf 0) restarts = 0 iters= 27
+congrad: source_norm = 2.631660e+04
+CG: Convergence at 27 iterations, L2 relative residual: iterated = 6.588443e-10, true = 6.588443e-10
+CONGRAD5: time = 9.381056e-03 (fn_QUDA D) masses = 1 iters = 27 mflops = 3.498346e+03
+ OK converged final_rsq= 4.3e-19 (cf 1e-18) rel = 1.6e-16 (cf 0) restarts = 0 iters= 27
+GFTIME:   time = 4.988694e-02 (Symanzik1) mflops = 3.140623e+03
+FLTIME: time = 1.281214e-02 (asqtad D) mflops = 1.012800e+04
+OPTIME: time = 2.578020e-03 (asqtad3)
+arg.threads = 1024
+FFTIME: time = 7.726717e-02 (asqtad3)
+FLTIME: time = 1.283216e-02 (asqtad D) mflops = 1.011219e+04
+FLTIME: time = 1.276708e-02 (asqtad D) mflops = 1.016374e+04
+FLTIME: time = 1.285005e-02 (asqtad D) mflops = 1.009812e+04
+congrad: source_norm = 2.618137e+04
+CG: Convergence at 28 iterations, L2 relative residual: iterated = 7.240856e-10, true = 7.240856e-10
+CONGRAD5: time = 9.798050e-03 (fn_QUDA D) masses = 1 iters = 28 mflops = 3.473514e+03
+ OK converged final_rsq= 5.2e-19 (cf 1e-18) rel = 1.7e-16 (cf 0) restarts = 0 iters= 28
+congrad: source_norm = 2.832040e+04
+CG: Convergence at 28 iterations, L2 relative residual: iterated = 6.283219e-10, true = 6.283219e-10
+CONGRAD5: time = 9.747028e-03 (fn_QUDA D) masses = 1 iters = 28 mflops = 3.491696e+03
+ OK converged final_rsq= 3.9e-19 (cf 1e-18) rel = 1.5e-16 (cf 0) restarts = 0 iters= 28
+GFTIME:   time = 5.052495e-02 (Symanzik1) mflops = 3.100965e+03
+FLTIME: time = 1.317191e-02 (asqtad D) mflops = 9.851363e+03
+OPTIME: time = 2.697945e-03 (asqtad3)
+arg.threads = 1024
+FFTIME: time = 7.739902e-02 (asqtad3)
+PLAQ:	2.9036386507210197	2.9023991581685507
+P_LOOP:	2.899215e+00	-1.475950e-04
+G_LOOP:  0  0  4   	2.9043580943372302e+00	( 0 1 7 6  )
+G_LOOP:  0  1  4   	2.9027706951398140e+00	( 0 2 7 5  )
+G_LOOP:  0  2  4   	2.9019504207071867e+00	( 0 3 7 4  )
+G_LOOP:  0  3  4   	2.9037871626860063e+00	( 1 2 6 5  )
+G_LOOP:  0  4  4   	2.9029684160699558e+00	( 1 3 6 4  )
+G_LOOP:  0  5  4   	2.9022786377285126e+00	( 2 3 5 4  )
+G_LOOP:  1  0  6   	2.8583743031150251e+00	( 0 0 1 7 7 6  )
+G_LOOP:  1  1  6   	2.8554144988254273e+00	( 0 0 2 7 7 5  )
+G_LOOP:  1  2  6   	2.8579880217522229e+00	( 0 0 3 7 7 4  )
+G_LOOP:  1  3  6   	2.8511329817915203e+00	( 1 1 0 6 6 7  )
+G_LOOP:  1  4  6   	2.8541966052948449e+00	( 1 1 2 6 6 5  )
+G_LOOP:  1  5  6   	2.8540865811216487e+00	( 1 1 3 6 6 4  )
+G_LOOP:  1  6  6   	2.8487893909603974e+00	( 2 2 0 5 5 7  )
+G_LOOP:  1  7  6   	2.8533626041655982e+00	( 2 2 1 5 5 6  )
+G_LOOP:  1  8  6   	2.8510679361896489e+00	( 2 2 3 5 5 4  )
+G_LOOP:  1  9  6   	2.8537840398893177e+00	( 3 3 0 4 4 7  )
+G_LOOP:  1  10  6   	2.8516541460078688e+00	( 3 3 1 4 4 6  )
+G_LOOP:  1  11  6   	2.8521017095999821e+00	( 3 3 2 4 4 5  )
+G_LOOP:  2  0  6   	2.8562211260578452e+00	( 0 1 2 7 6 5  )
+G_LOOP:  2  1  6   	2.8585809641246449e+00	( 0 1 5 7 6 2  )
+G_LOOP:  2  2  6   	2.8553883298705518e+00	( 0 6 2 7 1 5  )
+G_LOOP:  2  3  6   	2.8555849313761121e+00	( 0 6 5 7 1 2  )
+G_LOOP:  2  4  6   	2.8526722627515562e+00	( 0 1 3 7 6 4  )
+G_LOOP:  2  5  6   	2.8566439877472987e+00	( 0 1 4 7 6 3  )
+G_LOOP:  2  6  6   	2.8574524404538222e+00	( 0 6 3 7 1 4  )
+G_LOOP:  2  7  6   	2.8543810848218945e+00	( 0 6 4 7 1 3  )
+G_LOOP:  2  8  6   	2.8537285140843780e+00	( 0 2 3 7 5 4  )
+G_LOOP:  2  9  6   	2.8544483480473954e+00	( 0 2 4 7 5 3  )
+G_LOOP:  2  10  6   	2.8531091556952912e+00	( 0 5 3 7 2 4  )
+G_LOOP:  2  11  6   	2.8490838431645256e+00	( 0 5 4 7 2 3  )
+G_LOOP:  2  12  6   	2.8546513172761516e+00	( 1 2 3 6 5 4  )
+G_LOOP:  2  13  6   	2.8509134302641934e+00	( 1 2 4 6 5 3  )
+G_LOOP:  2  14  6   	2.8528702261412664e+00	( 1 5 3 6 2 4  )
+G_LOOP:  2  15  6   	2.8550613907509330e+00	( 1 5 4 6 2 3  )
+GACTION: 4.213999e-01
+restore_fermion_links_fm: Warning. Precision request replaced by 2
+FLTIME: time = 1.362681e-02 (asqtad D) mflops = 9.522496e+03
+FLTIME: time = 1.293087e-02 (asqtad D) mflops = 1.003500e+04
+FLTIME: time = 1.281500e-02 (asqtad D) mflops = 1.012573e+04
+FLTIME: time = 1.285815e-02 (asqtad D) mflops = 1.009175e+04
+congrad: source_norm = 2.631574e+04
+CG: Convergence at 28 iterations, L2 relative residual: iterated = 9.209866e-10, true = 9.209866e-10
+CONGRAD5: time = 1.011705e-02 (fn_QUDA D) masses = 1 iters = 28 mflops = 3.363990e+03
+ OK converged final_rsq= 8.5e-19 (cf 1e-18) rel = 2.9e-16 (cf 0) restarts = 0 iters= 28
+congrad: source_norm = 2.720796e+04
+CG: Convergence at 28 iterations, L2 relative residual: iterated = 9.088589e-10, true = 9.088589e-10
+CONGRAD5: time = 9.595156e-03 (fn_QUDA D) masses = 1 iters = 28 mflops = 3.546963e+03
+ OK converged final_rsq= 8.3e-19 (cf 1e-18) rel = 2.7e-16 (cf 0) restarts = 0 iters= 28
+GFTIME:   time = 4.996610e-02 (Symanzik1) mflops = 3.135648e+03
+FLTIME: time = 1.280403e-02 (asqtad D) mflops = 1.013441e+04
+OPTIME: time = 2.593040e-03 (asqtad3)
+arg.threads = 1024
+FFTIME: time = 7.722807e-02 (asqtad3)
+FLTIME: time = 1.292706e-02 (asqtad D) mflops = 1.003796e+04
+FLTIME: time = 1.278615e-02 (asqtad D) mflops = 1.014858e+04
+FLTIME: time = 1.276612e-02 (asqtad D) mflops = 1.016450e+04
+congrad: source_norm = 2.668371e+04
+CG: Convergence at 28 iterations, L2 relative residual: iterated = 9.701186e-10, true = 9.701186e-10
+CONGRAD5: time = 9.817839e-03 (fn_QUDA D) masses = 1 iters = 28 mflops = 3.466513e+03
+ OK converged final_rsq= 9.4e-19 (cf 1e-18) rel = 3.3e-16 (cf 0) restarts = 0 iters= 28
+congrad: source_norm = 2.800448e+04
+CG: Convergence at 28 iterations, L2 relative residual: iterated = 9.992485e-10, true = 9.992485e-10
+CONGRAD5: time = 9.791136e-03 (fn_QUDA D) masses = 1 iters = 28 mflops = 3.475967e+03
+ OK converged final_rsq= 1e-18 (cf 1e-18) rel = 3.6e-16 (cf 0) restarts = 0 iters= 28
+GFTIME:   time = 4.982185e-02 (Symanzik1) mflops = 3.144726e+03
+FLTIME: time = 1.279283e-02 (asqtad D) mflops = 1.014329e+04
+OPTIME: time = 2.551079e-03 (asqtad3)
+arg.threads = 1024
+FFTIME: time = 7.734799e-02 (asqtad3)
+FLTIME: time = 1.286387e-02 (asqtad D) mflops = 1.008726e+04
+FLTIME: time = 1.276588e-02 (asqtad D) mflops = 1.016469e+04
+FLTIME: time = 1.276302e-02 (asqtad D) mflops = 1.016697e+04
+congrad: source_norm = 2.722326e+04
+CG: Convergence at 29 iterations, L2 relative residual: iterated = 6.346221e-10, true = 6.346221e-10
+CONGRAD5: time = 1.005101e-02 (fn_QUDA D) masses = 1 iters = 29 mflops = 3.507025e+03
+ OK converged final_rsq= 4e-19 (cf 1e-18) rel = 1.4e-16 (cf 0) restarts = 0 iters= 29
+congrad: source_norm = 2.672390e+04
+CG: Convergence at 29 iterations, L2 relative residual: iterated = 6.378096e-10, true = 6.378096e-10
+CONGRAD5: time = 9.711027e-03 (fn_QUDA D) masses = 1 iters = 29 mflops = 3.629807e+03
+ OK converged final_rsq= 4.1e-19 (cf 1e-18) rel = 1.3e-16 (cf 0) restarts = 0 iters= 29
+GFTIME:   time = 4.992294e-02 (Symanzik1) mflops = 3.138359e+03
+FLTIME: time = 1.279497e-02 (asqtad D) mflops = 1.014158e+04
+OPTIME: time = 2.567053e-03 (asqtad3)
+arg.threads = 1024
+FFTIME: time = 7.714391e-02 (asqtad3)
+FLTIME: time = 1.284790e-02 (asqtad D) mflops = 1.009980e+04
+FLTIME: time = 1.276994e-02 (asqtad D) mflops = 1.016147e+04
+FLTIME: time = 1.278090e-02 (asqtad D) mflops = 1.015275e+04
+congrad: source_norm = 2.679253e+04
+CG: Convergence at 29 iterations, L2 relative residual: iterated = 8.708525e-10, true = 8.708525e-10
+CONGRAD5: time = 9.824991e-03 (fn_QUDA D) masses = 1 iters = 29 mflops = 3.587703e+03
+ OK converged final_rsq= 7.6e-19 (cf 1e-18) rel = 2.5e-16 (cf 0) restarts = 0 iters= 29
+congrad: source_norm = 2.721843e+04
+CG: Convergence at 29 iterations, L2 relative residual: iterated = 7.978169e-10, true = 7.978169e-10
+CONGRAD5: time = 9.885073e-03 (fn_QUDA D) masses = 1 iters = 29 mflops = 3.565897e+03
+ OK converged final_rsq= 6.4e-19 (cf 1e-18) rel = 2.1e-16 (cf 0) restarts = 0 iters= 29
+GFTIME:   time = 4.984784e-02 (Symanzik1) mflops = 3.143087e+03
+FLTIME: time = 1.278901e-02 (asqtad D) mflops = 1.014631e+04
+OPTIME: time = 2.571106e-03 (asqtad3)
+arg.threads = 1024
+FFTIME: time = 7.730508e-02 (asqtad3)
+PLAQ:	2.8223082753716096	2.8219084269716532
+P_LOOP:	2.814533e+00	9.218692e-04
+G_LOOP:  0  0  4   	2.8216594742531229e+00	( 0 1 7 6  )
+G_LOOP:  0  1  4   	2.8228032820177424e+00	( 0 2 7 5  )
+G_LOOP:  0  2  4   	2.8251390896016466e+00	( 0 3 7 4  )
+G_LOOP:  0  3  4   	2.8224620698439709e+00	( 1 2 6 5  )
+G_LOOP:  0  4  4   	2.8212456477859282e+00	( 1 3 6 4  )
+G_LOOP:  0  5  4   	2.8193405435273613e+00	( 2 3 5 4  )
+G_LOOP:  1  0  6   	2.7312118161132046e+00	( 0 0 1 7 7 6  )
+G_LOOP:  1  1  6   	2.7267696825278618e+00	( 0 0 2 7 7 5  )
+G_LOOP:  1  2  6   	2.7388386201446742e+00	( 0 0 3 7 7 4  )
+G_LOOP:  1  3  6   	2.7263492361600430e+00	( 1 1 0 6 6 7  )
+G_LOOP:  1  4  6   	2.7358899500828526e+00	( 1 1 2 6 6 5  )
+G_LOOP:  1  5  6   	2.7281238589938490e+00	( 1 1 3 6 6 4  )
+G_LOOP:  1  6  6   	2.7291037181705873e+00	( 2 2 0 5 5 7  )
+G_LOOP:  1  7  6   	2.7314549100437064e+00	( 2 2 1 5 5 6  )
+G_LOOP:  1  8  6   	2.7296003515199874e+00	( 2 2 3 5 5 4  )
+G_LOOP:  1  9  6   	2.7390434093763898e+00	( 3 3 0 4 4 7  )
+G_LOOP:  1  10  6   	2.7325706234516280e+00	( 3 3 1 4 4 6  )
+G_LOOP:  1  11  6   	2.7282239498968490e+00	( 3 3 2 4 4 5  )
+G_LOOP:  2  0  6   	2.7341998850505274e+00	( 0 1 2 7 6 5  )
+G_LOOP:  2  1  6   	2.7365875702405047e+00	( 0 1 5 7 6 2  )
+G_LOOP:  2  2  6   	2.7375647632182130e+00	( 0 6 2 7 1 5  )
+G_LOOP:  2  3  6   	2.7353292697550606e+00	( 0 6 5 7 1 2  )
+G_LOOP:  2  4  6   	2.7276178015632309e+00	( 0 1 3 7 6 4  )
+G_LOOP:  2  5  6   	2.7337106226814769e+00	( 0 1 4 7 6 3  )
+G_LOOP:  2  6  6   	2.7304417872247035e+00	( 0 6 3 7 1 4  )
+G_LOOP:  2  7  6   	2.7361701564101302e+00	( 0 6 4 7 1 3  )
+G_LOOP:  2  8  6   	2.7294660551867680e+00	( 0 2 3 7 5 4  )
+G_LOOP:  2  9  6   	2.7347432491615415e+00	( 0 2 4 7 5 3  )
+G_LOOP:  2  10  6   	2.7302370016825712e+00	( 0 5 3 7 2 4  )
+G_LOOP:  2  11  6   	2.7288771895624184e+00	( 0 5 4 7 2 3  )
+G_LOOP:  2  12  6   	2.7230458621742488e+00	( 1 2 3 6 5 4  )
+G_LOOP:  2  13  6   	2.7238931705699105e+00	( 1 2 4 6 5 3  )
+G_LOOP:  2  14  6   	2.7273794666084799e+00	( 1 5 3 6 2 4  )
+G_LOOP:  2  15  6   	2.7311780464443696e+00	( 1 5 4 6 2 3  )
+GACTION: 7.728424e-01
+restore_fermion_links_fm: Warning. Precision request replaced by 2
+FLTIME: time = 1.339006e-02 (asqtad D) mflops = 9.690863e+03
+RUNNING COMPLETED
+average cg iters for step= 5.450000e+01
+Time = 1.514910e+01 seconds
+total_iters = 437
+
+
+get_i(0): EOF on input.
+
+               initQuda Total time = 2.89641 secs
+
+          loadGaugeQuda Total time = 0.019832 secs
+              download     = 0.011626 secs (  58.6%), with       32 calls at 3.633125e+02 us per call
+                  init     = 0.007935 secs (    40%), with       32 calls at 2.479687e+02 us per call
+               compute     = 0.000030 secs ( 0.151%), with       32 calls at 9.375000e-01 us per call
+                  free     = 0.000099 secs ( 0.499%), with       32 calls at 3.093750e+00 us per call
+     total accounted       = 0.019690 secs (  99.3%)
+     total missing         = 0.000142 secs ( 0.716%)
+
+             invertQuda Total time = 4.31772 secs
+              download     = 0.003898 secs (0.0903%), with       16 calls at 2.436250e+02 us per call
+                upload     = 0.000449 secs (0.0104%), with       16 calls at 2.806250e+01 us per call
+                  init     = 0.988214 secs (  22.9%), with       16 calls at 6.176337e+04 us per call
+              preamble     = 0.000015 secs (0.000347%), with       16 calls at 9.375000e-01 us per call
+               compute     = 2.206248 secs (  51.1%), with       16 calls at 1.378905e+05 us per call
+              epilogue     = 1.093356 secs (  25.3%), with       16 calls at 6.833475e+04 us per call
+                  free     = 0.000248 secs (0.00574%), with       16 calls at 1.550000e+01 us per call
+     total accounted       = 4.292428 secs (  99.4%)
+     total missing         = 0.025293 secs ( 0.586%)
+
+   computeStaggeredOprodQuda Total time = 0.017421 secs
+              download     = 0.005526 secs (  31.7%), with       24 calls at 2.302500e+02 us per call
+                upload     = 0.004647 secs (  26.7%), with        8 calls at 5.808750e+02 us per call
+                  init     = 0.004207 secs (  24.1%), with       32 calls at 1.314688e+02 us per call
+               compute     = 0.000247 secs (  1.42%), with       16 calls at 1.543750e+01 us per call
+              constant     = 0.002703 secs (  15.5%), with        8 calls at 3.378750e+02 us per call
+     total accounted       = 0.017330 secs (  99.5%)
+     total missing         = 0.000091 secs ( 0.522%)
+
+   computeAsqtadForceQuda Total time = 4.99071 secs
+              download     = 0.029147 secs ( 0.584%), with       24 calls at 1.214458e+03 us per call
+                upload     = 0.001145 secs (0.0229%), with        8 calls at 1.431250e+02 us per call
+                  init     = 0.007243 secs ( 0.145%), with        8 calls at 9.053750e+02 us per call
+               compute     = 4.619041 secs (  92.6%), with       16 calls at 2.886901e+05 us per call
+                  free     = 0.005189 secs ( 0.104%), with        8 calls at 6.486250e+02 us per call
+     total accounted       = 4.661765 secs (  93.4%)
+     total missing         = 0.328946 secs (  6.59%)
+
+                endQuda Total time = 0.1263 secs
+
+Device memory used = 39.5 MB
+Page-locked host memory used = 2.5 MB
+Total host memory used >= 3.2 MB
+
+exit: Tue Mar 11 13:48:55 2014
+

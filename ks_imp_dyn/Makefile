@@ -229,7 +229,7 @@ WANT_GF_GPU = #true
 
 ifeq ($(strip ${WANTQUDA}),true)
 
-  QUDA_HOME = /uufs/chpc.utah.edu/common/home/u0731948/quda_new/quda
+  QUDA_HOME = /uufs/chpc.utah.edu/common/home/u0731948/quda_old
   INCQUDA = -I${QUDA_HOME}/include -I/lib -I${QUDA_HOME}/tests
   LIBQUDA = -L${QUDA_HOME}/lib -lquda
   QUDA_LIBRARIES = ${QUDA_HOME}/lib

@@ -1,8 +1,8 @@
     prompt 0
-    nx 4
-    ny 4
-    nz 4
-    nt 16
+    nx 8
+    ny 6
+    nz 12
+    nt 12
     iseed 4563421
     n_pseudo 5
     load_rhmc_params rationals.sample.su3_rhmc_hisq_f211

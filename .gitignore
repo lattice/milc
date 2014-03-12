@@ -1,5 +1,5 @@
 *.o
-./ks_imp_rhmc/su3_rhmc*
-./ks_imp_dyn/su3_rmd*
-./ks_imp_dyn/test/*
-./ks_imp_rhmc/test/*
+ks_imp_rhmc/su3_rhmc*
+ks_imp_dyn/su3_rmd*
+ks_imp_dyn/test/*
+ks_imp_rhmc/test/*
