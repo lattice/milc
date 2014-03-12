@@ -2000,34 +2000,6 @@ fn_fermion_force_multi_hisq_reunit( info_t *info, su3_matrix *force_accum[4],
 
 
 
-void outer_product_append_gpu(Real* one_hop_coeff, Real* three_hop_coeff, 
-                              su3_vector** multi_x, int nterms,
-                              su3_matrix *one_hop_oprod[4], 
-                              su3_matrix *three_hop_oprod[4])
-{
-  int term;
-
-  double** coeff = (double**)malloc(nterms*sizeof(double*));
-  for(term=0; term<nterms; ++term){
-    coeff[term] = (double*)malloc(2*sizeof(double));
-    coeff[term][0] = one_hop_coeff[term];
-    coeff[term][1] = three_hop_coeff[term];
-  }
-
-  void* oprod[2] = {one_hop_oprod, three_hop_oprod};
-
-  printf("Calling outer_product_append_gpu\n");
-
-  qudaComputeOprod(PRECISION, nterms, coeff, multi_x, oprod);
-  
-  for(term=0; term<nterms; ++term){
-    free(coeff[term]);
-  }  
-  free(coeff);
-
-  return;
-}
-
 
 void outer_product_create_gpu(Real* one_hop_coeff, Real *three_hop_coeff,
                               Real* one_hop_naik_coeff, Real *three_hop_naik_coeff,
@@ -2228,30 +2200,6 @@ static void outer_product_append( Real one_hop_coeff, Real three_hop_coeff,
 } // outer_product_append
 
 
-static void outer_product_create( Real* one_hop_coeff, Real* three_hop_coeff, 
-	  su3_vector **multi_x, int nterms,
-	  su3_matrix *one_hop_oprod[4], su3_matrix *three_hop_oprod[4] )
-{
-  int dir, i;
-  for(dir=XUP;dir<=TUP;dir++){
-    FORALLFIELDSITES(i){ 
-      clear_su3mat( &(one_hop_oprod[dir][i]) );
-      clear_su3mat( &(three_hop_oprod[dir][i]));
-    }
-  }
- 
-  node0_printf("Nterm1 : %d\n", nterms); 
-
-
-  outer_product_append_gpu(one_hop_coeff, 
-                       three_hop_coeff,
-		       multi_x, 
-		       nterms,
-		       one_hop_oprod,
-		       three_hop_oprod);
-  return;
-} // outer_product_create
-
 
 
 
@@ -2339,25 +2287,6 @@ fn_fermion_force_multi_hisq_wrapper_mx_gpu(info_t* info, Real eps, Real *residue
       clear_su3mat( &(three_link_oprod[dir][i]));
     }
   }
-/*
-  outer_product_append_gpu(one_hop_coeff, three_hop_coeff, 
-		            multi_x, n_order_naik_total, 
-                            staple_oprod, three_link_oprod);
-
-  for(dir=XUP; dir<=TUP; ++dir){
-    FORALLFIELDSITES(i){
-      scalar_mult_su3_matrix(&(staple_oprod[dir][i]), ap->p2.act_path_coeff.one_link, 
-			     &(one_link_oprod[dir][i]));
-    }
-  }
-
-  outer_product_append_gpu(one_hop_naik_coeff,
-                       three_hop_naik_coeff,
-                       multi_x +(n_order_naik_total - n_orders_naik_current),
-                       n_orders_naik_current,
-                       one_link_oprod,
-                       three_link_oprod);
-*/
 
   outer_product_create_gpu(one_hop_coeff, three_hop_coeff,
                            one_hop_naik_coeff, three_hop_naik_coeff,
