@@ -223,10 +223,10 @@ endif
 
 WANTQUDA    =  true
 WANT_CL_BCG_GPU =# true
-WANT_FN_CG_GPU =  #true
-WANT_FL_GPU = # true
-WANT_FF_GPU =   #true
-WANT_GF_GPU = # true
+WANT_FN_CG_GPU = true
+WANT_FL_GPU =  true
+WANT_FF_GPU =  true
+WANT_GF_GPU =  true
 
 ifeq ($(strip ${WANTQUDA}),true)
 
@@ -481,6 +481,7 @@ CPREFETCH = #
 # KS_MULTICG=REVHYB  Same as HYBRID but with vectors in reverse order.
 
 # HALF_MIXED         If PRECISION=2, do multimass solve in single precision
+# MAX_MIXED	     do multimass solve in single precision
 #                    and single-mass refinements in double
 # NO_REFINE          No refinements except for masses with nonzero Naik eps
 

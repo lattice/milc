@@ -92,7 +92,9 @@ int ks_multicg_offset_field_gpu(
   }
 
   inv_args.max_iter  = qic[0].max*qic[0].nrestart;
-#if defined(MAX_MIXED) || defined(HALF_MIXED)
+#if defined(MAX_MIXED) 
+  inv_args.mixed_precision = 2;
+#elif defined(HALF_MIXED)
   inv_args.mixed_precision = 1;
 #else
   inv_args.mixed_precision = 0;
