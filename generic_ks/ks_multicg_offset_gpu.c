@@ -87,8 +87,12 @@ int ks_multicg_offset_field_gpu(
   double* final_relative_residual = (double*)malloc(num_offsets*sizeof(double));
 
   for(i=0; i<num_offsets; ++i){
+   
    residual[i]          = qic[i].resid;
-   relative_residual[i] = qic[i].relresid;
+   if (i>1){
+    residual[i]          = 0.;//qic[i].resid;
+   }
+   relative_residual[i] = 0.;// /* No relative residual in use here */ qic[i].relresid;
   }
 
   inv_args.max_iter  = qic[0].max*qic[0].nrestart;
