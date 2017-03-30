@@ -476,8 +476,17 @@ f_meas_current_multi_diff_eig( int n_masses, int nrand, int nwrite, int thinning
   imp_ferm_links_t **fn = get_fm_links(fl);
   double wtime = 0.;
   
-  /* Block solver parameters -- temporary */
-  int nr = 2;  /* Number of random sources to block */
+  /* Block solver parameter - set by environment variable */
+  const char *block_solver_str = getenv("QUDA_MILC_BLOCK_SOLVER_WIDTH");
+  int block_solver_width = block_solver_str ? atoi(block_solver_str) : 8;
+  // default is block solver width of 8
+  if ( (block_solver_width < 8 || block_solver_width > 128) && block_solver_width % 8 != 0 ) {
+    node0_printf("Invalid block solver width parameter %d\n", block_solver_width);
+  } else {
+    node0_printf("Running block solver with width %d\n", block_solver_width);
+  }
+
+  int nr = block_solver_width / 8;  /* Number of random sources to block */
   su3_vector **gr;  /* Storage for sources */
   su3_vector **M_inv_gr; /* Storage for solutions */
 
@@ -664,8 +673,17 @@ f_meas_current_multi_eig( int n_masses, int nrand, int nwrite, int thinning,
   imp_ferm_links_t **fn = get_fm_links(fl);
   double wtime = 0.;
 
-  /* Block solver parameters -- temporary */
-  int nr = 2;  /* Number of random sources to block */
+  /* Block solver parameter - set by environment variable */
+  const char *block_solver_str = getenv("QUDA_MILC_BLOCK_SOLVER_WIDTH");
+  int block_solver_width = block_solver_str ? atoi(block_solver_str) : 8;
+  // default is block solver width of 8
+  if ( (block_solver_width < 8 || block_solver_width > 128) && block_solver_width % 8 != 0 ) {
+    node0_printf("Invalid block solver width parameter %d\n", block_solver_width);
+  } else {
+    node0_printf("Running block solver with width %d\n", block_solver_width);
+  }
+
+  int nr = block_solver_width / 8;  /* Number of random sources to block */
   su3_vector **gr;  /* Storage for sources */
   su3_vector **M_inv_gr; /* Storage for solutions */
 
