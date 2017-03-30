@@ -374,7 +374,7 @@ int mat_invert_uml_field(su3_vector *src, su3_vector *dst,
     /* Polish off odd sites to correct for possible roundoff error */
     /* dst_o <- (M_adj M)^-1 temp_o  (odd sites only) */
     qic->parity = ODD;
-    cgn += ks_congrad_field( tmp, dst, qic, mass, fn );
+    if (PRECISION==1) cgn += ks_congrad_field( tmp, dst, qic, mass, fn );
     qic->final_iters += even_iters;
 
     //    check_invert_field( dst, src, mass, 1e-6, fn);
@@ -450,7 +450,7 @@ int mat_invert_block_uml_field(int nsrc, su3_vector **src, su3_vector **dst,
   /* Polish off odd sites to correct for possible roundoff error */
   /* dst_o <- (M_adj M)^-1 temp_o  (odd sites only) */
   qic->parity = ODD;
-  cgn += ks_congrad_block_field(nsrc, tmp, dst, qic, mass, fn );
+  if (PRECISION==1) cgn += ks_congrad_block_field(nsrc, tmp, dst, qic, mass, fn );
   qic->final_iters += even_iters;
   
   //    check_invert_field( dst, src, mass, 1e-6, fn);
